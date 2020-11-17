@@ -1,0 +1,25 @@
+---
+jobs:
+  - name: run-local-test
+    plan:
+      - get: spring-boot-music
+      - get: pipeline-tasks
+      - task: test
+        file: beanstalk/tasks/test.yml
+        input_mapping:
+          ci-tasks: pipeline-tasks
+        params:
+          ENV: "test"
+
+# All external Things which has to be in place for runing the jobs
+resources:
+  - name: spring-boot-music
+    type: git
+    source:
+      uri: https://github.com/idev4u/spring-music.git
+      branch: master
+  - name: pipeline-tasks
+    type: git
+    source:
+      uri: https://github.com/idev4u/spring-music-ci.git
+      branch: main

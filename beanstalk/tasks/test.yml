@@ -1,0 +1,31 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  # source: { repository: busybox } # Todo add your own base image with
+  source:
+    repository: gradle
+    tag: "6.7-jdk11"
+
+# Folders from the job
+inputs:
+  - name: ci-tasks
+  - name: spring-boot-music
+
+outputs:
+# - name: bumped
+
+params:
+  ENV: unconfigured
+
+run:
+  path:
+    ci-tasks/beanstalk/tasks/test.sh
+    # path: sh
+    # args:
+    # - -ec
+    # - |
+    #   echo "hallo ups!"
+    #   ls -al
+    #   ls -al ci-tasks/beanstalk
