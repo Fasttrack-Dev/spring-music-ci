@@ -35,10 +35,10 @@ resources:
   - name: spring-boot-music
     type: git
     source:
-      uri: https://github.com/idev4u/spring-music.git
+      uri: https://github.com/Fasttrack-Dev/spring-music.git
       branch: master
   - name: pipeline-tasks
     type: git
     source:
-      uri: https://github.com/idev4u/spring-music-ci.git
+      uri: https://github.com/Fasttrack-Dev/spring-music-ci.git
       branch: main

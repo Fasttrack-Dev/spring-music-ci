@@ -2,7 +2,7 @@
 
 ## deploy the config
 ```sh
-bash$ fly set-pipeline -t ft -p beanstalk-speedway -c beanstalk/spring-example-beanstalk.yml
+bash$ fly set-pipeline -t fasttrack -p beanstalk-speedway -c beanstalk/spring-example-beanstalk.yml
 ```
 
 ## develop a pipeline local
@@ -10,7 +10,7 @@ you can put everything in one file but if you split off you facing the problem h
 Use the option `execute` and ann the input from local
 
 ```sh
-bash$ fly -t ft e -c beanstalk/tasks/test.yml -i ci-tasks=. -i spring-boot-music=../spring-music
+bash$ fly -t fasttrack e -c beanstalk/tasks/test.yml -i ci-tasks=. -i spring-boot-music=../spring-music
 ```
 
 ## ci image from dockerhub  
